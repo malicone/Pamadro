@@ -1,0 +1,7 @@
+C:\Projects\var\Pamadro\PamadroWeb\obj\Release\net8.0\PubTmp\Out\PamadroWeb.exe
+C:\Projects\var\Pamadro\PamadroWeb\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Projects\var\Pamadro\PamadroWeb\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Projects\var\Pamadro\PamadroWeb\obj\Release\net8.0\PubTmp\Out\PamadroWeb.dll
+C:\Projects\var\Pamadro\PamadroWeb\obj\Release\net8.0\PubTmp\Out\PamadroWeb.deps.json
+C:\Projects\var\Pamadro\PamadroWeb\obj\Release\net8.0\PubTmp\Out\PamadroWeb.runtimeconfig.json
+C:\Projects\var\Pamadro\PamadroWeb\obj\Release\net8.0\PubTmp\Out\PamadroWeb.pdb
