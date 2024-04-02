@@ -1,3 +1,12 @@
 17:39 2024-04-01
-add favicon.
+Add favicon.
 
+Add modal stay on top dialog with 30 sec countdown.
+
+Add options "Play sound", "Show message".
+
+Add tray icon.
+
+Idea for domain name - quadrostep.
+
+Add feedback from users right on main page.

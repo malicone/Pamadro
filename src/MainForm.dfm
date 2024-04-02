@@ -4,7 +4,7 @@ object frmMain: TfrmMain
   BorderIcons = [biSystemMenu]
   BorderStyle = bsDialog
   Caption = 'Pamadro'
-  ClientHeight = 287
+  ClientHeight = 289
   ClientWidth = 204
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,6 +13,7 @@ object frmMain: TfrmMain
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnCreate = FormCreate
   TextHeight = 15
   object edtWorkTime: TLabeledEdit
     Left = 40
@@ -47,24 +48,24 @@ object frmMain: TfrmMain
     TabOrder = 1
     Text = '10'
   end
-  object btnStart: TButton
+  object btnStartStop: TButton
     Left = 64
     Top = 216
     Width = 75
     Height = 25
     Caption = 'Start'
     TabOrder = 3
-    OnClick = btnStartClick
+    OnClick = btnStartStopClick
   end
-  object btnStop: TButton
+  object btnPauseResume: TButton
     Left = 64
     Top = 248
     Width = 75
     Height = 25
-    Caption = 'Stop'
+    Caption = 'Pause'
     Enabled = False
     TabOrder = 4
-    OnClick = btnStopClick
+    OnClick = btnPauseResumeClick
   end
   object timerTask: TTimer
     Enabled = False

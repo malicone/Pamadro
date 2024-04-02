@@ -104,7 +104,9 @@
         <DCC_ExeOutput>..\bin\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_DcuOutput>.\dcu\$(Platform)\$(Config)</DCC_DcuOutput>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <Icon_MainIcon>..\img\tomato.ico</Icon_MainIcon>
+        <Icon_MainIcon>..\img\AhaSoftTomatoIcon\ico\Tomato.ico</Icon_MainIcon>
+        <UWP_DelphiLogo44>..\img\AhaSoftTomatoIcon\png\48x48\Tomato.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\img\AhaSoftTomatoIcon\png\256x256\Tomato.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -146,7 +148,14 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\img\tomato.png" Configuration="Release" Class="UWP_DelphiLogo44">
+                <DeployFile LocalName="..\img\AhaSoftTomatoIcon\png\256x256\Tomato.png" Configuration="Release" Class="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets\</RemoteDir>
+                        <RemoteName>Logo150x150.png</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\img\AhaSoftTomatoIcon\png\48x48\Tomato.png" Configuration="Release" Class="UWP_DelphiLogo44">
                     <Platform Name="Win32">
                         <RemoteDir>Assets\</RemoteDir>
                         <RemoteName>Logo44x44.png</RemoteName>

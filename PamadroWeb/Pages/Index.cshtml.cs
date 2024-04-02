@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace PomadroWeb.Pages
+namespace PamadroWeb.Pages
 {
     public class IndexModel : PageModel
     {
