@@ -2,9 +2,7 @@ program Pamadro;
 
 uses
   Vcl.Forms,
-  MainForm in 'MainForm.pas' {frmMain},
-  MessageForm in 'MessageForm.pas' {frmMessage},
-  Globals in 'Globals.pas';
+  MainForm in 'MainForm.pas' {frmMain};
 
 {$R *.res}
 

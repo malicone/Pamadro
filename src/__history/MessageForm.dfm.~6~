@@ -1,0 +1,50 @@
+object frmMessage: TfrmMessage
+  Left = 0
+  Top = 0
+  AlphaBlendValue = 127
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Pamadro Message'
+  ClientHeight = 119
+  ClientWidth = 324
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
+  TextHeight = 15
+  object lblMessage: TLabel
+    Left = 118
+    Top = 32
+    Width = 89
+    Height = 21
+    Alignment = taCenter
+    Caption = 'Take a break'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object btnClose: TButton
+    Left = 124
+    Top = 72
+    Width = 75
+    Height = 25
+    Caption = 'Close'
+    Default = True
+    TabOrder = 0
+  end
+  object timerCounter: TTimer
+    Left = 256
+    Top = 64
+  end
+  object timerClose: TTimer
+    Left = 256
+    Top = 16
+  end
+end

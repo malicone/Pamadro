@@ -3,8 +3,7 @@ program Pamadro;
 uses
   Vcl.Forms,
   MainForm in 'MainForm.pas' {frmMain},
-  MessageForm in 'MessageForm.pas' {frmMessage},
-  Globals in 'Globals.pas';
+  MessageForm in 'MessageForm.pas' {frmMessage};
 
 {$R *.res}
 
@@ -12,5 +11,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmMain, frmMain);
+  Application.CreateForm(TfrmMessage, frmMessage);
   Application.Run;
 end.

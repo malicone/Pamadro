@@ -1,0 +1,2 @@
+1. "Show Dialog" option added.
+2. "Play Sound" option added.

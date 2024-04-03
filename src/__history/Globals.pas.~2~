@@ -1,0 +1,10 @@
+unit Globals;
+
+interface
+
+type
+  TIntervalType = (itWork, itRest);
+
+implementation
+
+end.
