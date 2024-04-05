@@ -171,7 +171,17 @@ begin
 end;
 
 procedure TfrmMain.ResumeWorkOrRest;
+var
+  WorkTimeMin: Integer;
+  RestTimeMin: Integer;
+  RemainTimeSec: Integer;
 begin
+  WorkTimeMin := StrToIntDef(Trim(edtWorkTime.Text), _DEFAULT_WORKING_TIME_MIN);
+  RestTimeMin := StrToIntDef(Trim(edtRestTime.Text), _DEFAULT_REST_TIME_MIN);
+  if CurrentIntervalType = TIntervalTypeEnum.itWork then
+    RemainTimeSec := WorkTimeMin * SecsPerMin - _TimeCounterSec
+  else
+    RemainTimeSec := RestTimeMin * SecsPerMin - _TimeCounterSec;
   timerTask.Interval := _TimeCounterSec * MSecsPerSec;
   timerTask.Enabled := True;
   timerCounter.Enabled := True;
