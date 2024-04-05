@@ -23,6 +23,7 @@ object frmMain: TfrmMain
     EditLabel.Width = 84
     EditLabel.Height = 15
     EditLabel.Caption = 'Work Time, min'
+    NumbersOnly = True
     TabOrder = 0
     Text = '50'
   end

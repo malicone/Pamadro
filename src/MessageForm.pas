@@ -16,10 +16,11 @@ type
     procedure FormCreate(Sender: TObject);
     procedure timerCloseTimer(Sender: TObject);
     procedure timerCounterTimer(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private const
     _CLOSE_INTERVAL_SEC = 11;
     _COUNTER_INTERVAL_SEC = 1;
-    _BTN_CLOSE_FORMATTER = 'Close (%2.2d)';
+    _BTN_CLOSE_FORMATTER = 'Close (%1.1d)';
     _TAKE_BREAK = 'Take a break';
     _START_WORK = 'Start work';
     procedure SetDefaultValues;
@@ -58,6 +59,11 @@ begin
   timerClose.Interval := _CLOSE_INTERVAL_SEC * MSecsPerSec;
   timerCounter.Interval := _COUNTER_INTERVAL_SEC * MSecsPerSec;
   _CounterSec := _CLOSE_INTERVAL_SEC;
+end;
+
+procedure TfrmMessage.btnCloseClick(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TfrmMessage.FormClose(Sender: TObject; var Action: TCloseAction);

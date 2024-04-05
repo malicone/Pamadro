@@ -97,6 +97,8 @@ begin
     edtWorkTime.Enabled := False;
     edtRestTime.Enabled := False;
     edtTaskName.Enabled := False;
+    chkPlaySound.Enabled := False;
+    chkShowDialog.Enabled := False;
     StartWork;
   end
   else
@@ -106,6 +108,8 @@ begin
     edtWorkTime.Enabled := True;
     edtRestTime.Enabled := True;
     edtTaskName.Enabled := True;
+    chkPlaySound.Enabled := True;
+    chkShowDialog.Enabled := True;
     StopWorkOrRest;
   end;
 end;
