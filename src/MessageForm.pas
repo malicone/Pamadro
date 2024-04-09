@@ -4,14 +4,15 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Globals;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Globals, Vcl.WinXCtrls;
 
 type
   TfrmMessage = class(TForm)
     btnClose: TButton;
-    lblMessage: TLabel;
     timerCounter: TTimer;
     timerClose: TTimer;
+    pnlTaskName: TRelativePanel;
+    pnlMessage: TRelativePanel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure timerCloseTimer(Sender: TObject);
@@ -27,23 +28,28 @@ type
   private
     { Private declarations }
     _CounterSec: Integer;
+    function GetTaskName: string;
+    procedure SetTaskName(const Value: string);
+  protected
+    procedure SetMessage(AIntervalType: TIntervalTypeEnum);
+    property TaskName: string read GetTaskName write SetTaskName;
   public
     { Public declarations }
-    procedure SetMessage(AIntervalType: TIntervalTypeEnum);
   end;
 
-procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum);
+procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum; ATaskName: string);
 
 implementation
 
 {$R *.dfm}
 
-procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum);
+procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum; ATaskName: string);
 var
   frmMessage: TfrmMessage;
 begin
   frmMessage := TfrmMessage.Create(nil);
   frmMessage.SetMessage(AIntervalType);
+  frmMessage.TaskName := ATaskName;
   frmMessage.Show;
 end;
 
@@ -59,6 +65,16 @@ begin
   timerClose.Interval := _CLOSE_INTERVAL_SEC * MSecsPerSec;
   timerCounter.Interval := _COUNTER_INTERVAL_SEC * MSecsPerSec;
   _CounterSec := _CLOSE_INTERVAL_SEC;
+end;
+
+function TfrmMessage.GetTaskName: string;
+begin
+  Result := pnlTaskName.Caption;
+end;
+
+procedure TfrmMessage.SetTaskName(const Value: string);
+begin
+  pnlTaskName.Caption := Value;
 end;
 
 procedure TfrmMessage.btnCloseClick(Sender: TObject);
@@ -85,8 +101,8 @@ end;
 procedure TfrmMessage.SetMessage(AIntervalType: TIntervalTypeEnum);
 begin
   case AIntervalType of
-    itWork: lblMessage.Caption := _TAKE_BREAK;
-    itRest: lblMessage.Caption := _START_WORK;
+    itWork: pnlMessage.Caption := _TAKE_BREAK;
+    itRest: pnlMessage.Caption := _START_WORK;
   end;
 end;
 

@@ -4,7 +4,7 @@ object frmMessage: TfrmMessage
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'Pamadro Message'
-  ClientHeight = 118
+  ClientHeight = 124
   ClientWidth = 320
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,23 +18,9 @@ object frmMessage: TfrmMessage
   OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
-  object lblMessage: TLabel
-    Left = 118
-    Top = 32
-    Width = 89
-    Height = 21
-    Alignment = taCenter
-    Caption = 'Take a break'
-    Font.Charset = RUSSIAN_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Segoe UI Semibold'
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
   object btnClose: TButton
-    Left = 124
-    Top = 72
+    Left = 123
+    Top = 88
     Width = 75
     Height = 25
     Caption = 'Close'
@@ -42,6 +28,40 @@ object frmMessage: TfrmMessage
     ModalResult = 1
     TabOrder = 0
     OnClick = btnCloseClick
+  end
+  object pnlTaskName: TRelativePanel
+    Left = 0
+    Top = 0
+    Width = 320
+    Height = 41
+    ControlCollection = <>
+    Align = alTop
+    Caption = 'Task Name'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 1
+    ExplicitLeft = -8
+  end
+  object pnlMessage: TRelativePanel
+    Left = 0
+    Top = 41
+    Width = 320
+    Height = 41
+    ControlCollection = <>
+    Align = alTop
+    Caption = 'Message'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI Semibold'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    ExplicitTop = 0
   end
   object timerCounter: TTimer
     OnTimer = timerCounterTimer

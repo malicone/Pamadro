@@ -26,6 +26,7 @@ type
   private const
     _DEFAULT_WORKING_TIME_MIN = 50;
     _DEFAULT_REST_TIME_MIN = 10;
+    _COUNTER_INTERVAL_SEC = 1;
     _FORM_TITLE_W_OR_R_FORMATER = '%2.2d:%2.2d [%s] Pamadro';
     _FORM_TITLE_DEFAULT = 'Pamadro';
     _FORM_TITLE_PAUSED_PREFIX = 'Paused ';
@@ -70,7 +71,7 @@ begin
   btnStartStop.Caption := _START_LEBEL;
   btnPauseResume.Caption := _PAUSE_LABEL;
   btnPauseResume.Enabled := False;
-  timerCounter.Interval := MSecsPerSec;
+  timerCounter.Interval := _COUNTER_INTERVAL_SEC * MSecsPerSec;
   chkPlaySound.Checked := True;
   chkShowDialog.Checked := True;
   FCurrentIntervalType := TIntervalTypeEnum.itWork;
@@ -95,7 +96,8 @@ begin
     btnPauseResume.Enabled := True;
     edtWorkTime.Enabled := False;
     edtRestTime.Enabled := False;
-    edtTaskName.Enabled := False;
+    chkPlaySound.Enabled := False;
+    chkShowDialog.Enabled := False;
     StartWork;
   end
   else
@@ -104,7 +106,8 @@ begin
     btnPauseResume.Enabled := False;
     edtWorkTime.Enabled := True;
     edtRestTime.Enabled := True;
-    edtTaskName.Enabled := True;
+    chkPlaySound.Enabled := True;
+    chkShowDialog.Enabled := True;
     StopWorkOrRest;
   end;
 end;
@@ -166,31 +169,23 @@ begin
 end;
 
 procedure TfrmMain.ResumeWorkOrRest;
-var
-  WorkTimeMin: Integer;
-  RestTimeMin: Integer;
-  RemainTimeSec: Integer;
 begin
-  WorkTimeMin := StrToIntDef(Trim(edtWorkTime.Text), _DEFAULT_WORKING_TIME_MIN);
-  RestTimeMin := StrToIntDef(Trim(edtRestTime.Text), _DEFAULT_REST_TIME_MIN);
-  if CurrentIntervalType = TIntervalTypeEnum.itWork then
-    RemainTimeSec := WorkTimeMin * SecsPerMin - _TimeCounterSec
-  else
-    RemainTimeSec := RestTimeMin * SecsPerMin - _TimeCounterSec;
-  timerTask.Interval := RemainTimeSec * MSecsPerSec;
+  timerTask.Interval := _TimeCounterSec * MSecsPerSec;
   timerTask.Enabled := True;
   timerCounter.Enabled := True;
 end;
 
 procedure TfrmMain.timerTaskTimer(Sender: TObject);
 begin
+  if chkShowDialog.Checked then
+    ShowPamadroMessage(CurrentIntervalType);
   if CurrentIntervalType = TIntervalTypeEnum.itWork then
   begin
     if chkPlaySound.Checked then
       Beep;
     StartRest;
   end
-  else// _REST_TIME
+  else
   begin
     if chkPlaySound.Checked then
     begin

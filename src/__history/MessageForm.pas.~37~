@@ -12,42 +12,45 @@ type
     lblMessage: TLabel;
     timerCounter: TTimer;
     timerClose: TTimer;
+    lblTaskName: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure timerCloseTimer(Sender: TObject);
     procedure timerCounterTimer(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
   private const
     _CLOSE_INTERVAL_SEC = 11;
     _COUNTER_INTERVAL_SEC = 1;
-    _BTN_CLOSE_FORMATTER = 'Close (%2.2d)';
+    _BTN_CLOSE_FORMATTER = 'Close (%1.1d)';
     _TAKE_BREAK = 'Take a break';
     _START_WORK = 'Start work';
     procedure SetDefaultValues;
   private
     { Private declarations }
     _CounterSec: Integer;
+    function GetTaskName: string;
+    procedure SetTaskName(const Value: string);
+  protected
+    procedure SetMessage(AIntervalType: TIntervalTypeEnum);
+    property TaskName: string read GetTaskName write SetTaskName;
   public
     { Public declarations }
-    procedure SetMessage(AIntervalType: TIntervalTypeEnum);
   end;
 
-procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum);
+procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum; ATaskName: string);
 
 implementation
 
 {$R *.dfm}
 
-procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum);
+procedure ShowPamadroMessage(AIntervalType: TIntervalTypeEnum; ATaskName: string);
 var
   frmMessage: TfrmMessage;
 begin
   frmMessage := TfrmMessage.Create(nil);
-  try
-    frmMessage.SetMessage(AIntervalType);
-    frmMessage.ShowModal;
-  finally
-    FreeAndNil(frmMessage);
-  end;
+  frmMessage.SetMessage(AIntervalType);
+  frmMessage.TaskName := ATaskName;
+  frmMessage.Show;
 end;
 
 procedure TfrmMessage.FormCreate(Sender: TObject);
@@ -62,6 +65,21 @@ begin
   timerClose.Interval := _CLOSE_INTERVAL_SEC * MSecsPerSec;
   timerCounter.Interval := _COUNTER_INTERVAL_SEC * MSecsPerSec;
   _CounterSec := _CLOSE_INTERVAL_SEC;
+end;
+
+function TfrmMessage.GetTaskName: string;
+begin
+  Result := lblTaskName.Caption;
+end;
+
+procedure TfrmMessage.SetTaskName(const Value: string);
+begin
+  lblTaskName.Caption := Value;
+end;
+
+procedure TfrmMessage.btnCloseClick(Sender: TObject);
+begin
+  Close;
 end;
 
 procedure TfrmMessage.FormClose(Sender: TObject; var Action: TCloseAction);

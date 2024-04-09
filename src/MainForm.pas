@@ -96,7 +96,6 @@ begin
     btnPauseResume.Enabled := True;
     edtWorkTime.Enabled := False;
     edtRestTime.Enabled := False;
-    edtTaskName.Enabled := False;
     chkPlaySound.Enabled := False;
     chkShowDialog.Enabled := False;
     StartWork;
@@ -107,7 +106,6 @@ begin
     btnPauseResume.Enabled := False;
     edtWorkTime.Enabled := True;
     edtRestTime.Enabled := True;
-    edtTaskName.Enabled := True;
     chkPlaySound.Enabled := True;
     chkShowDialog.Enabled := True;
     StopWorkOrRest;
@@ -180,7 +178,7 @@ end;
 procedure TfrmMain.timerTaskTimer(Sender: TObject);
 begin
   if chkShowDialog.Checked then
-    ShowPamadroMessage(CurrentIntervalType);
+    ShowPamadroMessage(CurrentIntervalType, edtTaskName.Text);
   if CurrentIntervalType = TIntervalTypeEnum.itWork then
   begin
     if chkPlaySound.Checked then

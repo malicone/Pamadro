@@ -16,3 +16,7 @@ Add garbage check of edits (0, -1 etc).
 
 15:51 2024-04-03
 Add "Close interval, sec." bellow "Show Dialog".
+
+21:12 2024-04-06
+Left Task field enabled when user starts counting. User should be able to change task.
+Show task in popup form.
