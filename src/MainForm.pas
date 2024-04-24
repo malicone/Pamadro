@@ -18,6 +18,7 @@ type
     btnPauseResume: TButton;
     chkPlaySound: TCheckBox;
     chkShowDialog: TCheckBox;
+    pnlTotal: TPanel;
     procedure btnStartStopClick(Sender: TObject);
     procedure timerTaskTimer(Sender: TObject);
     procedure timerCounterTimer(Sender: TObject);
@@ -36,6 +37,7 @@ type
     _STOP_LABEL = 'Stop';
     _PAUSE_LABEL = 'Pause';
     _RESUME_LABEL = 'Resume';
+    _TOTAL_WORKTIME_COUNT_FORMATTER = 'Total Work Times: %d';
     procedure SetDefaultValues;
     procedure ResumeWorkOrRest;
     procedure PauseWorkOrRest;
@@ -43,6 +45,7 @@ type
   private
     _TimeCounterSec: Integer;
     FCurrentIntervalType: TIntervalTypeEnum;
+    _TotalWorkTimeCount: Integer;
 
     procedure StartWork;
     procedure StartRest;
@@ -75,6 +78,8 @@ begin
   chkPlaySound.Checked := True;
   chkShowDialog.Checked := True;
   FCurrentIntervalType := TIntervalTypeEnum.itWork;
+  _TotalWorkTimeCount := 0;
+  pnlTotal.Caption := Format(_TOTAL_WORKTIME_COUNT_FORMATTER, [_TotalWorkTimeCount]);
 end;
 
 function TfrmMain.GetCurrentIntervalType: TIntervalTypeEnum;
@@ -159,6 +164,8 @@ begin
   timerTask.Enabled := True;
   _TimeCounterSec := RestTimeMin * SecsPerMin;
   timerCounter.Enabled := True;
+  Inc(_TotalWorkTimeCount);
+  pnlTotal.Caption := Format(_TOTAL_WORKTIME_COUNT_FORMATTER, [_TotalWorkTimeCount]);
 end;
 
 procedure TfrmMain.PauseWorkOrRest;

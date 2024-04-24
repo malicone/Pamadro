@@ -4,8 +4,8 @@ object frmMain: TfrmMain
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsDialog
   Caption = 'Pamadro'
-  ClientHeight = 353
-  ClientWidth = 194
+  ClientHeight = 374
+  ClientWidth = 184
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   TextHeight = 15
   object edtWorkTime: TLabeledEdit
-    Left = 37
+    Left = 32
     Top = 48
     Width = 121
     Height = 23
@@ -28,7 +28,7 @@ object frmMain: TfrmMain
     Text = '50'
   end
   object edtTaskName: TLabeledEdit
-    Left = 37
+    Left = 32
     Top = 160
     Width = 121
     Height = 23
@@ -39,7 +39,7 @@ object frmMain: TfrmMain
     Text = 'Hello World'
   end
   object edtRestTime: TLabeledEdit
-    Left = 37
+    Left = 32
     Top = 104
     Width = 121
     Height = 23
@@ -51,7 +51,7 @@ object frmMain: TfrmMain
     Text = '10'
   end
   object btnStartStop: TButton
-    Left = 59
+    Left = 54
     Top = 271
     Width = 75
     Height = 25
@@ -61,7 +61,7 @@ object frmMain: TfrmMain
     OnClick = btnStartStopClick
   end
   object btnPauseResume: TButton
-    Left = 59
+    Left = 54
     Top = 303
     Width = 75
     Height = 25
@@ -71,7 +71,7 @@ object frmMain: TfrmMain
     OnClick = btnPauseResumeClick
   end
   object chkPlaySound: TCheckBox
-    Left = 37
+    Left = 32
     Top = 200
     Width = 97
     Height = 17
@@ -81,7 +81,7 @@ object frmMain: TfrmMain
     TabOrder = 3
   end
   object chkShowDialog: TCheckBox
-    Left = 37
+    Left = 32
     Top = 232
     Width = 97
     Height = 17
@@ -89,6 +89,17 @@ object frmMain: TfrmMain
     Checked = True
     State = cbChecked
     TabOrder = 4
+  end
+  object pnlTotal: TPanel
+    Left = 0
+    Top = 344
+    Width = 184
+    Height = 30
+    Align = alBottom
+    BevelInner = bvSpace
+    BevelKind = bkFlat
+    BevelOuter = bvSpace
+    TabOrder = 7
   end
   object timerTask: TTimer
     Enabled = False

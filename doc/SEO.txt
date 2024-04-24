@@ -3,26 +3,39 @@ Register in search engines:
 #Google
 #Bing
 #Yahoo (same as Bing)
-Baшdu (cannot register)
+Baшdu (cannot register; phone number incorrect)
+
+add sitemap.
 
 Register in software catalogs:
 
+16:51 2024-04-11
+#AlternativeTo -> app in catalog
 
+14:34 2024-04-14
+#Softpedia - submitted PAD file. Created with PADGen. PAD Creator doesn't work.
+16:24 2024-04-16
+App not in catalog yet
 
+16:19 2024-04-15
+#CNET Download
+https://download.cnet.com/add-your-software/
+https://form.asana.com/?k=K18amUv9dFs1KDJ_9KUacw&d=13195745475309
 
+-Microsoft Store
+Cannot add app. No such feature in my account.
 
+-FindMySoft
+No such feature on the site.
 
+https://en.softonic.com
+No such feature on the site.
 
+16:36 2024-04-16
+https://filehippo.com
+No such feature on the site.
 
-
-
-
-
-
-
-
-
-
+largest software download directories
 
 
 
