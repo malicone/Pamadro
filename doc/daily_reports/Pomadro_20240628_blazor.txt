@@ -1,0 +1,14 @@
+1. Blazor web site created.
+2. Online timer implementation started.
+
+
+
+
+
+
+
+
+
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>

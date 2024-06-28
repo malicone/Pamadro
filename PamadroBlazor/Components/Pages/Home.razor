@@ -1,0 +1,101 @@
+﻿@page "/"
+@using PamadroBlazor.Models
+@rendermode InteractiveServer
+
+<PageTitle>Pamadro Online</PageTitle>
+
+<div class="row">
+    <div class="col-2">
+        
+    </div>
+    <div class="col-8">
+
+<div class="text-center">
+    <img src="images/Tomato_256.png" alt="Pamadro" class="img-fluid" />
+    <h2>Simple Pomodoro technique timer to boost your productivity</h2>
+
+    <p>
+        What is Pomodoro technique? Well, it's a time management method which allows you stop wasting time (procrastinate). 
+        Just start timer, work, take a break, work, break, work and so on. It really helps people. 
+        <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Learn more</a> about it on
+        Wikipedia.
+    </p>
+
+    <div class="card mx-auto mb-4" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Pamadro</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Set your time</h6>
+            <br />
+
+            <EditForm Model="TimerParameters" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+
+                <div class="form-group">
+                    <label for="workTimeMin">Work time (min)</label>
+                    <ValidationMessage For="@(() => TimerParameters.WorkTimeMin)" />
+                    <InputNumber id="workTimeMin" @bind-Value="TimerParameters.WorkTimeMin" 
+                        class="form-control timer-input-text mx-auto" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="shortBreakTimeMin">Break time (min)</label>
+                    <ValidationMessage For="@(() => TimerParameters.ShortBreakTimeMin)" />
+                    <InputNumber id="shortBreakTimeMin" @bind-Value="TimerParameters.ShortBreakTimeMin"
+                                    class="form-control timer-input-text mx-auto" />
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="taskName">Task Name</label>
+                    <InputText id="taskName" @bind-Value="TimerParameters.TaskName" 
+                        class="form-control timer-input-text mx-auto" />
+                </div>
+                <br />
+
+                <div class="form-group">
+                    <label for="playSound">Play Sound</label>
+                    <InputCheckbox id="playSound" @bind-Value="TimerParameters.PlaySound"
+                        class="mx-auto" />
+                </div>
+                <br />
+
+                <div class="form-group">
+                    <label for="showNotification">Show Notification</label>
+                    <InputCheckbox id="showNotification" @bind-Value="TimerParameters.ShowNotification"
+                        class="mx-auto" />
+                </div>
+                <br />
+
+                <div class="form-group">
+                    <button class="btn btn-primary timer-button">@startStopCaption</button>
+                </div>
+                <br />
+
+                <div class="form-group">
+                    <button class="btn btn-primary timer-button">Pause</button>
+                </div>
+
+            </EditForm>
+
+        </div>
+    </div>
+
+</div>
+
+    </div>
+    <div class="col-2">
+    
+    </div>
+</div>
+
+@code {
+    private TimerParameters TimerParameters = new TimerParameters();    
+    private string startStopCaption = "Start";
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("Valid submit");
+    }
+    private void HandleInvalidSubmit(EditContext context)
+    {
+        Console.WriteLine("Invalid submit");
+    }                
+}

@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\PamadroBlazor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\PamadroBlazor.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\images\\Tomato_256.png",
+      "PackagePath": "staticwebassets\\images\\Tomato_256.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PamadroBlazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PamadroBlazor.props",
+      "PackagePath": "build\\PamadroBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PamadroBlazor.props",
+      "PackagePath": "buildMultiTargeting\\PamadroBlazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PamadroBlazor.props",
+      "PackagePath": "buildTransitive\\PamadroBlazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

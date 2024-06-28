@@ -36,9 +36,6 @@ object frmMessage: TfrmMessage
     Height = 41
     ControlCollection = <>
     Align = alTop
-    BevelInner = bvSpace
-    BevelKind = bkFlat
-    BevelOuter = bvSpace
     Caption = 'Task Name'
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
@@ -47,6 +44,7 @@ object frmMessage: TfrmMessage
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 1
+    ExplicitLeft = -8
   end
   object pnlMessage: TRelativePanel
     Left = 0
@@ -55,9 +53,6 @@ object frmMessage: TfrmMessage
     Height = 41
     ControlCollection = <>
     Align = alTop
-    BevelInner = bvSpace
-    BevelKind = bkFlat
-    BevelOuter = bvSpace
     Caption = 'Message'
     Font.Charset = RUSSIAN_CHARSET
     Font.Color = clWindowText
@@ -66,6 +61,7 @@ object frmMessage: TfrmMessage
     Font.Style = [fsBold]
     ParentFont = False
     TabOrder = 2
+    ExplicitTop = 0
   end
   object timerCounter: TTimer
     OnTimer = timerCounterTimer
