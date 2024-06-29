@@ -20,3 +20,11 @@ Add "Close interval, sec." bellow "Show Dialog".
 21:12 2024-04-06
 Left Task field enabled when user starts counting. User should be able to change task.
 Show task in popup form.
+
+00:03 2024-06-29
+On Delphi versition change Rest -> Break, Dialog -> Notification.
+
+Add pause timer i.e. user can see how many minites gone on pause.
+
+Add checkbox 'Double Break After 4 Times'.
+It would be good to allow setup all options: big break time, big break after every nth time.

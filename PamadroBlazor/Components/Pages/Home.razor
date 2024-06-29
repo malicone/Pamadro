@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using PamadroBlazor.Models
+@using System.Timers
 @rendermode InteractiveServer
 
 <PageTitle>Pamadro Online</PageTitle>
@@ -12,7 +13,7 @@
 
 <div class="text-center">
     <img src="images/Tomato_256.png" alt="Pamadro" class="img-fluid" />
-    <h2>Simple Pomodoro technique timer to boost your productivity</h2>
+    <h3>Simple Pomodoro technique timer to boost your productivity</h3>
 
     <p>
         What is Pomodoro technique? Well, it's a time management method which allows you stop wasting time (procrastinate). 
@@ -23,22 +24,19 @@
 
     <div class="card mx-auto mb-4" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">Pamadro</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Set your time</h6>
+            <h5 class="card-title">@StatusMessage</h5>
             <br />
 
-            <EditForm Model="TimerParameters" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+            <EditForm Model="TimerParameters">
 
                 <div class="form-group">
-                    <label for="workTimeMin">Work time (min)</label>
-                    <ValidationMessage For="@(() => TimerParameters.WorkTimeMin)" />
+                    <label for="workTimeMin">Work time (min)</label>                    
                     <InputNumber id="workTimeMin" @bind-Value="TimerParameters.WorkTimeMin" 
                         class="form-control timer-input-text mx-auto" />
                 </div>
                 <br />
                 <div class="form-group">
-                    <label for="shortBreakTimeMin">Break time (min)</label>
-                    <ValidationMessage For="@(() => TimerParameters.ShortBreakTimeMin)" />
+                    <label for="shortBreakTimeMin">Break time (min)</label>                    
                     <InputNumber id="shortBreakTimeMin" @bind-Value="TimerParameters.ShortBreakTimeMin"
                                     class="form-control timer-input-text mx-auto" />
                 </div>
@@ -65,12 +63,12 @@
                 <br />
 
                 <div class="form-group">
-                    <button class="btn btn-primary timer-button">@startStopCaption</button>
+                    <button class="btn btn-primary timer-button" @onclick="StartStopHandler">@StartStopCaption</button>
                 </div>
                 <br />
 
                 <div class="form-group">
-                    <button class="btn btn-primary timer-button">Pause</button>
+                    <button class="btn btn-primary timer-button" @onclick="PauseResumeHandler">@PauseResumeCaption</button>
                 </div>
 
             </EditForm>
@@ -87,15 +85,67 @@
 </div>
 
 @code {
-    private TimerParameters TimerParameters = new TimerParameters();    
-    private string startStopCaption = "Start";
+    private void StartStopHandler()
+    {
+        if (StartStopCaption == StartCaption)
+        {
+            StartStopCaption = StopCaption;            
+            timerTask.Interval = TimerParameters.WorkTimeMin * SecPerMin * MSecPerSec;
+            timerTask.Elapsed += TimerTask_Elapsed;
+            timerTask.Start();
 
-    private void HandleValidSubmit()
-    {
-        Console.WriteLine("Valid submit");
+            CountdownSec = TimerParameters.WorkTimeMin * SecPerMin;
+            timerCounter.Interval = MSecPerSec;
+            timerCounter.Elapsed += TimerCounter_Elapsed;
+            timerCounter.Start();
+
+            Console.WriteLine("Started");
+        }
+        else
+        {
+            StartStopCaption = StartCaption;
+            Console.WriteLine("Stopped");
+        }
+        Console.WriteLine($"StartStopCaption: {StartStopCaption}");
     }
-    private void HandleInvalidSubmit(EditContext context)
+    private void PauseResumeHandler()
     {
-        Console.WriteLine("Invalid submit");
-    }                
+        if (PauseResumeCaption == PauseCaption)
+        {
+            PauseResumeCaption = ResumeCaption;
+        }
+        else
+        {
+            PauseResumeCaption = PauseCaption;
+        }
+    }
+
+    private void TimerTask_Elapsed(object? sender, ElapsedEventArgs e)
+    {
+        StatusMessage = "Time is up!";
+    }
+    private void TimerCounter_Elapsed(object? sender, ElapsedEventArgs e)
+    {
+        CountdownSec--;
+        StatusMessage = $"{CountdownSec / SecPerMin}:{CountdownSec % SecPerMin} Pamadro";
+        Console.WriteLine(StatusMessage);
+    }
+
+    private TimerParameters TimerParameters = new TimerParameters();    
+    private Timer timerTask = new Timer();
+    private Timer timerCounter = new Timer();
+    private int CountdownSec = 0;
+    
+    private string StatusMessage = "Pamadro";
+
+    private const string StartCaption = "Start";
+    private const string StopCaption = "Stop";
+    private const string PauseCaption = "Pause";
+    private const string ResumeCaption = "Resume";
+
+    private string StartStopCaption = StartCaption;
+    private string PauseResumeCaption = PauseCaption;
+
+    private const int SecPerMin = 60;
+    private const int MSecPerSec = 1000;
 }

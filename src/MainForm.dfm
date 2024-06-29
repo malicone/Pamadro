@@ -100,6 +100,8 @@ object frmMain: TfrmMain
     BevelKind = bkFlat
     BevelOuter = bvSpace
     TabOrder = 7
+    ExplicitTop = 343
+    ExplicitWidth = 180
   end
   object timerTask: TTimer
     Enabled = False

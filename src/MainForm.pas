@@ -38,6 +38,7 @@ type
     _PAUSE_LABEL = 'Pause';
     _RESUME_LABEL = 'Resume';
     _TOTAL_WORKTIME_COUNT_FORMATTER = 'Total Work Times: %d';
+    _SOUND_DELAY_MSEC = 1000;
     procedure SetDefaultValues;
     procedure ResumeWorkOrRest;
     procedure PauseWorkOrRest;
@@ -197,7 +198,7 @@ begin
     if chkPlaySound.Checked then
     begin
       Beep;
-      Sleep(1000);
+      Sleep(_SOUND_DELAY_MSEC);
       Beep;
     end;
     StartWork;

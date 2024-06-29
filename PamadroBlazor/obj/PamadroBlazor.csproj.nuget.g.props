@@ -14,4 +14,7 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
     <SourceRoot Include="E:\MyProgs\Syncfusion\25.1.35\WPF\25.1.35\ToolboxNuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.6\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.6\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
+  </ImportGroup>
 </Project>

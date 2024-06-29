@@ -28,3 +28,17 @@ C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\refint\PamadroBlazor.dll
 C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\PamadroBlazor.pdb
 C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\PamadroBlazor.genruntimeconfig.cache
 C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\ref\PamadroBlazor.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Components.WebAssembly.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\PamadroBlazor.csproj.AssemblyReference.cache
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\PamadroB.9C7F92CD.Up2Date
