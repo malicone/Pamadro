@@ -9,20 +9,28 @@
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\data\\Pamadro.exe",
+      "PackagePath": "staticwebassets\\data\\Pamadro.exe"
     },
     {
-      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
-    },
-    {
-      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\favicon.png",
-      "PackagePath": "staticwebassets\\favicon.png"
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
       "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\images\\Tomato_256.png",
       "PackagePath": "staticwebassets\\images\\Tomato_256.png"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\images\\pamadroWinDel.png",
+      "PackagePath": "staticwebassets\\images\\pamadroWinDel.png"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\js\\sounds.js",
+      "PackagePath": "staticwebassets\\js\\sounds.js"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\sounds\\alert.wav",
+      "PackagePath": "staticwebassets\\sounds\\alert.wav"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PamadroBlazor.Microsoft.AspNetCore.StaticWebAssets.props",

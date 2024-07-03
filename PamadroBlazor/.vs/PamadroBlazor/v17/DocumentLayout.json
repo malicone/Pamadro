@@ -3,35 +3,55 @@
   "WorkspaceRootPath": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\pages\\windel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\pages\\windel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\var\\Pamadro\\PamadroWeb\\Pages\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\var\\Pamadro\\PamadroWeb\\Pages\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\pamadroblazor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:pamadroblazor.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\wwwroot\\js\\sounds.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:wwwroot\\js\\sounds.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\models\\timerparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:models\\timerparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\pamadroblazor.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
@@ -42,27 +62,11 @@
       "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:utils\\jsconsole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projects\\var\\TinyShop\\TinyShop\\Areas\\BlazorComponents\\Pages\\ProductForm.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\models\\timerparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:models\\timerparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|c:\\projects\\var\\pamadro\\pamadroblazor\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6011D4CC-BA40-4B45-AA76-75481376779A}|PamadroBlazor.csproj|solutionrelative:components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,7 +98,7 @@
         },
         {
           "DockedWidth": 312,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 23,
           "Children": [
             {
               "$type": "Bookmark",
@@ -131,18 +135,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "Components\\_Imports.razor",
+              "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\_Imports.razor",
+              "RelativeToolTip": "Components\\_Imports.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-01T22:38:54.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "sounds.js",
+              "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\js\\sounds.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\sounds.js",
+              "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\js\\sounds.js",
+              "RelativeToolTip": "wwwroot\\js\\sounds.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAA6wAEAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-07-01T11:34:39.654Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T16:11:59.088Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "PamadroBlazor",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\PamadroBlazor.csproj",
               "RelativeDocumentMoniker": "PamadroBlazor.csproj",
@@ -153,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "JsConsole.cs",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Utils\\JsConsole.cs",
               "RelativeDocumentMoniker": "Utils\\JsConsole.cs",
@@ -165,7 +193,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "TimerParameters.cs",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Models\\TimerParameters.cs",
               "RelativeDocumentMoniker": "Models\\TimerParameters.cs",
@@ -177,31 +205,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "app.css",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\app.css",
               "RelativeDocumentMoniker": "wwwroot\\app.css",
               "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\wwwroot\\app.css",
               "RelativeToolTip": "wwwroot\\app.css",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAADQAAAAAAAAA",
+              "ViewState": "AQIAABcAAAAAAAAAAIBMwDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-06-28T17:45:10.903Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroWeb\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "..\\PamadroWeb\\Pages\\Index.cshtml",
               "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroWeb\\Pages\\Index.cshtml",
               "RelativeToolTip": "..\\PamadroWeb\\Pages\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-28T14:56:14.467Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "ProductForm.razor",
               "DocumentMoniker": "C:\\Projects\\var\\TinyShop\\TinyShop\\Areas\\BlazorComponents\\Pages\\ProductForm.razor",
               "RelativeDocumentMoniker": "..\\..\\TinyShop\\TinyShop\\Areas\\BlazorComponents\\Pages\\ProductForm.razor",
@@ -225,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 11,
               "Title": "Routes.razor",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Routes.razor",
               "RelativeDocumentMoniker": "Components\\Routes.razor",
@@ -237,20 +265,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "App.razor",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\App.razor",
               "RelativeDocumentMoniker": "Components\\App.razor",
               "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\App.razor",
               "RelativeToolTip": "Components\\App.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T12:45:39.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T12:45:39.597Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Error.razor",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\Error.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Error.razor",
@@ -262,66 +289,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAdAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T12:31:43.256Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T12:31:43.256Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Weather.razor",
-              "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\Weather.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\Weather.razor",
-              "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\Weather.razor",
-              "RelativeToolTip": "Components\\Pages\\Weather.razor",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAAAEAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T12:29:32.099Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Counter.razor",
-              "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\Counter.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\Counter.razor",
-              "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\Counter.razor",
-              "RelativeToolTip": "Components\\Pages\\Counter.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "WinDel.razor",
+              "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\WinDel.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\WinDel.razor",
+              "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Pages\\WinDel.razor",
+              "RelativeToolTip": "Components\\Pages\\WinDel.razor",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAABYAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-28T12:28:02.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
               "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Layout\\NavMenu.razor",
               "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-28T12:27:25.291Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
               "ToolTip": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\Components\\Layout\\MainLayout.razor",
               "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-28T12:26:58.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-28T12:26:58.606Z"
             }
           ]
         },

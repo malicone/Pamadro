@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AcUVd6mcQRU=",
+  "dgSpecHash": "QtQy2vQ2Oj4=",
   "success": true,
   "projectFilePath": "C:\\Projects\\var\\Pamadro\\PamadroBlazor\\PamadroBlazor.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\max\\.nuget\\packages\\blazor.bootstrap\\2.2.0\\blazor.bootstrap.2.2.0.nupkg.sha512",
     "C:\\Users\\max\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.6\\microsoft.aspnetcore.authorization.8.0.6.nupkg.sha512",
     "C:\\Users\\max\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.6\\microsoft.aspnetcore.components.8.0.6.nupkg.sha512",
     "C:\\Users\\max\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\8.0.6\\microsoft.aspnetcore.components.analyzers.8.0.6.nupkg.sha512",

@@ -43,9 +43,9 @@ object frmMain: TfrmMain
     Top = 104
     Width = 121
     Height = 23
-    EditLabel.Width = 78
+    EditLabel.Width = 85
     EditLabel.Height = 15
-    EditLabel.Caption = 'Rest Time, min'
+    EditLabel.Caption = 'Break Time, min'
     NumbersOnly = True
     TabOrder = 1
     Text = '10'
@@ -83,9 +83,9 @@ object frmMain: TfrmMain
   object chkShowDialog: TCheckBox
     Left = 32
     Top = 232
-    Width = 97
+    Width = 144
     Height = 17
-    Caption = 'Show Dialog'
+    Caption = 'Show Notification'
     Checked = True
     State = cbChecked
     TabOrder = 4

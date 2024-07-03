@@ -2,8 +2,11 @@
 @using PamadroBlazor.Models
 @using System.Timers
 @rendermode InteractiveServer
+@inject IJSRuntime JsRuntime
 
 <PageTitle>Pamadro Online</PageTitle>
+
+<Toasts class="p-3" Messages="toasters" AutoHide="true" Delay="10000" Placement="ToastsPlacement.MiddleCenter" />
 
 <div class="row">
     <div class="col-2">
@@ -20,7 +23,7 @@
         Just start timer, work, take a break, work, break, work and so on. It really helps people. 
         <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Learn more</a> about it on
         Wikipedia.
-    </p>
+    </p>    
 
     <div class="card mx-auto mb-4" style="width: 18rem;">
         <div class="card-body">
@@ -29,38 +32,43 @@
 
             <EditForm Model="TimerParameters">
 
-                <div class="form-group">
-                    <label for="workTimeMin">Work time (min)</label>                    
-                    <InputNumber id="workTimeMin" @bind-Value="TimerParameters.WorkTimeMin" 
-                        class="form-control timer-input-text mx-auto" />
-                </div>
-                <br />
-                <div class="form-group">
-                    <label for="shortBreakTimeMin">Break time (min)</label>                    
-                    <InputNumber id="shortBreakTimeMin" @bind-Value="TimerParameters.ShortBreakTimeMin"
-                                    class="form-control timer-input-text mx-auto" />
-                </div>
-                <br />
-                <div class="form-group">
-                    <label for="taskName">Task Name</label>
-                    <InputText id="taskName" @bind-Value="TimerParameters.TaskName" 
-                        class="form-control timer-input-text mx-auto" />
-                </div>
-                <br />
+                <fieldset disabled="@IsStarted">
+                    <div class="form-group">
+                        <label for="workTimeMin">Work time (min)</label>                    
+                        <InputNumber id="workTimeMin" @bind-Value="TimerParameters.WorkTimeMin" 
+                            class="form-control timer-input-text mx-auto" />
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <label for="shortBreakTimeMin">Break time (min)</label>                    
+                        <InputNumber id="shortBreakTimeMin" @bind-Value="TimerParameters.ShortBreakTimeMin"
+                                        class="form-control timer-input-text mx-auto" />
+                    </div>
+                    <br />
+                </fieldset>
 
-                <div class="form-group">
-                    <label for="playSound">Play Sound</label>
-                    <InputCheckbox id="playSound" @bind-Value="TimerParameters.PlaySound"
-                        class="mx-auto" />
-                </div>
-                <br />
+                    <div class="form-group">
+                        <label for="taskName">Task Name</label>
+                        <InputText id="taskName" @bind-Value="TimerParameters.TaskName" 
+                            class="form-control timer-input-text mx-auto" />
+                    </div>
+                    <br />
 
-                <div class="form-group">
-                    <label for="showNotification">Show Notification</label>
-                    <InputCheckbox id="showNotification" @bind-Value="TimerParameters.ShowNotification"
-                        class="mx-auto" />
-                </div>
-                <br />
+                <fieldset disabled="@IsStarted">
+                    <div class="form-group">
+                        <label for="playSound">Play Sound</label>
+                        <InputCheckbox id="playSound" @bind-Value="TimerParameters.PlaySound"
+                            class="mx-auto" />
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <label for="showNotification">Show Notification</label>
+                        <InputCheckbox id="showNotification" @bind-Value="TimerParameters.ShowNotification"
+                            class="mx-auto" />
+                    </div>
+                    <br />
+                </fieldset>
 
                 <div class="form-group">
                     <button class="btn btn-primary timer-button" @onclick="StartStopHandler">@StartStopCaption</button>
@@ -70,11 +78,20 @@
                 <div class="form-group">
                     <button class="btn btn-primary timer-button" @onclick="PauseResumeHandler">@PauseResumeCaption</button>
                 </div>
+                <br />
+
+                <div class="alert alert-primary" role="alert">
+                    @TotalWorkTimesCaption
+                </div>
 
             </EditForm>
 
         </div>
     </div>
+
+    <p>If you want to download Windows standalone version of the Pamadro please <a href="WinDel">come here</a></p>
+
+     <audio id="alertSound" src="/sounds/alert.wav" />
 
 </div>
 
@@ -85,67 +102,150 @@
 </div>
 
 @code {
+    protected override void OnInitialized()
+    {
+        timerTask.Elapsed += TimerTask_Elapsed;
+        timerTask.AutoReset = true;
+
+        timerCounter.Elapsed += TimerCounter_Elapsed;
+        timerCounter.AutoReset = true;
+    }
+
     private void StartStopHandler()
     {
         if (StartStopCaption == StartCaption)
         {
             StartStopCaption = StopCaption;            
-            timerTask.Interval = TimerParameters.WorkTimeMin * SecPerMin * MSecPerSec;
-            timerTask.Elapsed += TimerTask_Elapsed;
+            timerTask.Interval = (double)TimerParameters.WorkTimeMin * SecPerMin * MSecPerSec;
             timerTask.Start();
+            CurrentTimerTaskState = TimerTaskState.Work;
+            IsStarted = true;
 
             CountdownSec = TimerParameters.WorkTimeMin * SecPerMin;
-            timerCounter.Interval = MSecPerSec;
-            timerCounter.Elapsed += TimerCounter_Elapsed;
+            timerCounter.Interval = (double)MSecPerSec;
             timerCounter.Start();
-
-            Console.WriteLine("Started");
         }
         else
         {
             StartStopCaption = StartCaption;
-            Console.WriteLine("Stopped");
+            timerTask.Stop();
+            IsStarted = false;
+            timerCounter.Stop();
+            StatusMessage = AppName;
         }
-        Console.WriteLine($"StartStopCaption: {StartStopCaption}");
     }
     private void PauseResumeHandler()
     {
         if (PauseResumeCaption == PauseCaption)
         {
             PauseResumeCaption = ResumeCaption;
+            timerTask.Stop();
+            timerCounter.Stop();
+            StatusMessage = PausedPrefixCaption + StatusMessage;
         }
         else
         {
             PauseResumeCaption = PauseCaption;
+            timerTask.Start();
+            timerCounter.Start();
         }
     }
 
-    private void TimerTask_Elapsed(object? sender, ElapsedEventArgs e)
+    private ToastMessage CreateToastMessage( ToastType toastType, string message, string taskName )
     {
-        StatusMessage = "Time is up!";
-    }
-    private void TimerCounter_Elapsed(object? sender, ElapsedEventArgs e)
-    {
-        CountdownSec--;
-        StatusMessage = $"{CountdownSec / SecPerMin}:{CountdownSec % SecPerMin} Pamadro";
-        Console.WriteLine(StatusMessage);
+        return new ToastMessage
+            {
+                Type = toastType,                
+                Title = "Pamadro",
+                HelpText = $"{DateTime.Now}",
+                Message = $"{message} Task: {taskName}."
+            };
     }
 
+    private async void TimerTask_Elapsed(object? sender, ElapsedEventArgs e)
+    {
+        if(CurrentTimerTaskState == TimerTaskState.Work)
+        {
+            CurrentTimerTaskState = TimerTaskState.Break;
+            if (TimerParameters.ShowNotification)
+            {
+                toasters.Add( CreateToastMessage( ToastType.Primary, "Time to take a break!", TimerParameters.TaskName ) );
+            }            
+            if ( TimerParameters.PlaySound )
+            {
+                PlayAlertSound();
+            }
+            TotalWorkTimesCount++;
+            TotalWorkTimesCaption = string.Format( TotalWorkTimesCaptionFormatter, TotalWorkTimesCount );
+            CountdownSec = TimerParameters.ShortBreakTimeMin * SecPerMin;
+            timerTask.Interval = (double)TimerParameters.ShortBreakTimeMin * SecPerMin * MSecPerSec;
+            timerTask.Start();
+        }
+        else
+        {
+            CurrentTimerTaskState = TimerTaskState.Work;
+            if (TimerParameters.ShowNotification)
+            {
+                toasters.Add( CreateToastMessage( ToastType.Primary, "Start work.", TimerParameters.TaskName ) );
+            }
+            if ( TimerParameters.PlaySound )
+            {
+                PlayAlertSound();
+            }
+            CountdownSec = TimerParameters.WorkTimeMin * SecPerMin;
+            timerTask.Interval = (double)TimerParameters.WorkTimeMin * SecPerMin * MSecPerSec;
+            timerTask.Start();
+        }
+        await InvokeAsync( StateHasChanged );
+    }
+    private async void TimerCounter_Elapsed(object? sender, ElapsedEventArgs e)
+    {        
+        CountdownSec--;
+        string minutes = (CountdownSec / SecPerMin).ToString("D2");
+        string seconds = (CountdownSec % SecPerMin).ToString("D2");
+        string state = CurrentTimerTaskState == TimerTaskState.Work ? WorkShortHand : BreakShortHand;
+        StatusMessage = string.Format(CounterFormatter, minutes, seconds, state);
+        await InvokeAsync(StateHasChanged);
+    }
+
+    private void PlayAlertSound()
+    {                
+        JsRuntime.InvokeAsync<string>( "PlayAlertSound" );
+    }
+
+    private List<ToastMessage> toasters = new List<ToastMessage>();
     private TimerParameters TimerParameters = new TimerParameters();    
     private Timer timerTask = new Timer();
     private Timer timerCounter = new Timer();
     private int CountdownSec = 0;
-    
-    private string StatusMessage = "Pamadro";
 
+    private string StatusMessage = AppName;
+
+    private const string AppName = "Pamadro";
     private const string StartCaption = "Start";
     private const string StopCaption = "Stop";
     private const string PauseCaption = "Pause";
+    private const string PausedPrefixCaption = "Paused ";
     private const string ResumeCaption = "Resume";
+    private const string CounterFormatter = "{0}:{1} [{2}] Pamadro";
+    private const string WorkShortHand = "w";
+    private const string BreakShortHand = "b";
 
     private string StartStopCaption = StartCaption;
     private string PauseResumeCaption = PauseCaption;
 
     private const int SecPerMin = 60;
     private const int MSecPerSec = 1000;
+
+    private TimerTaskState CurrentTimerTaskState = TimerTaskState.Work;
+    private enum TimerTaskState
+    {
+        Work,
+        Break
+    }
+    private bool IsStarted = false;
+    
+    private int TotalWorkTimesCount = 0;
+    private const string TotalWorkTimesCaptionFormatter = "Total Work Times: {0}";
+    private string TotalWorkTimesCaption = string.Format( TotalWorkTimesCaptionFormatter, 0 );
 }

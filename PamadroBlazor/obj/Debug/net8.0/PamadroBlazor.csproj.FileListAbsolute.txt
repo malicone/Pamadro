@@ -42,3 +42,4 @@ C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.JSInterop.dll
 C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\Microsoft.JSInterop.WebAssembly.dll
 C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\PamadroBlazor.csproj.AssemblyReference.cache
 C:\Projects\var\Pamadro\PamadroBlazor\obj\Debug\net8.0\PamadroB.9C7F92CD.Up2Date
+C:\Projects\var\Pamadro\PamadroBlazor\bin\Debug\net8.0\BlazorBootstrap.dll

@@ -32,7 +32,7 @@ type
     _FORM_TITLE_DEFAULT = 'Pamadro';
     _FORM_TITLE_PAUSED_PREFIX = 'Paused ';
     _WORKING_LABEL = 'w';
-    _REST_LABEL = 'r';
+    _REST_LABEL = 'b';
     _START_LEBEL = 'Start';
     _STOP_LABEL = 'Stop';
     _PAUSE_LABEL = 'Pause';

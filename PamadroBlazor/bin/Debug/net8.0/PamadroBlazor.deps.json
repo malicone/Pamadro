@@ -8,11 +8,23 @@
     ".NETCoreApp,Version=v8.0": {
       "PamadroBlazor/1.0.0": {
         "dependencies": {
+          "Blazor.Bootstrap": "2.2.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.6",
           "Microsoft.JSInterop.WebAssembly": "8.0.6"
         },
         "runtime": {
           "PamadroBlazor.dll": {}
+        }
+      },
+      "Blazor.Bootstrap/2.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.6"
+        },
+        "runtime": {
+          "lib/net6.0/BlazorBootstrap.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Authorization/8.0.6": {
@@ -221,6 +233,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Blazor.Bootstrap/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Yn5yCi7/GFGLLfOoWAG7S4tNnWJuip3bHyT8n3i4xdvV21mNGBQeWNweVyUJXBRd+UWvKk6YY/m6QJsMsfFd/g==",
+      "path": "blazor.bootstrap/2.2.0",
+      "hashPath": "blazor.bootstrap.2.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/8.0.6": {
       "type": "package",
