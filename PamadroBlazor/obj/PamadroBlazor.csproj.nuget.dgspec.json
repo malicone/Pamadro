@@ -57,14 +57,6 @@
             "Blazor.Bootstrap": {
               "target": "Package",
               "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Components.WebAssembly": {
-              "target": "Package",
-              "version": "[8.0.6, )"
-            },
-            "Microsoft.JSInterop.WebAssembly": {
-              "target": "Package",
-              "version": "[8.0.6, )"
             }
           },
           "imports": [

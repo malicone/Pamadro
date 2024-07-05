@@ -15,7 +15,6 @@
     <SourceRoot Include="E:\MyProgs\Syncfusion\25.1.35\WPF\25.1.35\ToolboxNuGetPackages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.6\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.components.webassembly\8.0.6\build\net8.0\Microsoft.AspNetCore.Components.WebAssembly.props')" />
     <Import Project="$(NuGetPackageRoot)blazor.bootstrap\2.2.0\buildTransitive\Blazor.Bootstrap.props" Condition="Exists('$(NuGetPackageRoot)blazor.bootstrap\2.2.0\buildTransitive\Blazor.Bootstrap.props')" />
   </ImportGroup>
 </Project>

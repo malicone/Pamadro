@@ -1,0 +1,2 @@
+1. Nav item Windows icon set correctly. Css navbar file updated, bi-windows style and path added.
+2. The Blazor site published and deployed.

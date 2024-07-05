@@ -4,7 +4,7 @@
 @rendermode InteractiveServer
 @inject IJSRuntime JsRuntime
 
-<PageTitle>Pamadro Online</PageTitle>
+<PageTitle>@StatusMessage</PageTitle>
 
 <Toasts class="p-3" Messages="toasters" AutoHide="true" Delay="10000" Placement="ToastsPlacement.MiddleCenter" />
 
@@ -55,17 +55,17 @@
                     <br />
 
                 <fieldset disabled="@IsStarted">
-                    <div class="form-group">
-                        <label for="playSound">Play Sound</label>
+                    <div class="form-group">                        
                         <InputCheckbox id="playSound" @bind-Value="TimerParameters.PlaySound"
                             class="mx-auto" />
+                                <label for="playSound">Play Sound</label>
                     </div>
                     <br />
 
-                    <div class="form-group">
-                        <label for="showNotification">Show Notification</label>
+                    <div class="form-group">                        
                         <InputCheckbox id="showNotification" @bind-Value="TimerParameters.ShowNotification"
                             class="mx-auto" />
+                                <label for="showNotification">Show Notification</label>
                     </div>
                     <br />
                 </fieldset>
@@ -75,10 +75,12 @@
                 </div>
                 <br />
 
-                <div class="form-group">
-                    <button class="btn btn-primary timer-button" @onclick="PauseResumeHandler">@PauseResumeCaption</button>
-                </div>
-                <br />
+                <fieldset disabled="@(IsStarted == false)">
+                    <div class="form-group">
+                        <button class="btn btn-primary timer-button" @onclick="PauseResumeHandler">@PauseResumeCaption</button>
+                    </div>
+                    <br />
+                </fieldset>
 
                 <div class="alert alert-primary" role="alert">
                     @TotalWorkTimesCaption
@@ -89,7 +91,7 @@
         </div>
     </div>
 
-    <p>If you want to download Windows standalone version of the Pamadro please <a href="WinDel">come here</a></p>
+    <p>If you want to download Windows standalone version of the Pamadro please <a href="WinDel">come here.</a></p>
 
      <audio id="alertSound" src="/sounds/alert.wav" />
 
@@ -132,10 +134,15 @@
             IsStarted = false;
             timerCounter.Stop();
             StatusMessage = AppName;
+            PauseResumeCaption = PauseCaption;
         }
     }
     private void PauseResumeHandler()
     {
+        if(IsStarted == false)
+        {
+            return;
+        }
         if (PauseResumeCaption == PauseCaption)
         {
             PauseResumeCaption = ResumeCaption;

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PamadroWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc6aae349192a3ce19fa8a82becdb666b539e15f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PamadroWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PamadroWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

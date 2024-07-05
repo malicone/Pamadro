@@ -1,0 +1,8 @@
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\PamadroBlazor.exe
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\PamadroBlazor.dll
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\PamadroBlazor.deps.json
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\PamadroBlazor.runtimeconfig.json
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\PamadroBlazor.pdb
+C:\Projects\var\Pamadro\PamadroBlazor\obj\Release\net8.0\PubTmp\Out\BlazorBootstrap.dll

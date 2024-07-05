@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using PamadroBlazor.Components;
 
 var builder = WebApplication.CreateBuilder( args );

@@ -13,8 +13,16 @@
       "PackagePath": "staticwebassets\\data\\Pamadro.exe"
     },
     {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroWeb\\wwwroot\\data\\pamadro_pad_file.xml",
+      "PackagePath": "staticwebassets\\data\\pamadro_pad_file.xml"
+    },
+    {
       "Id": "C:\\Projects\\var\\Pamadro\\PamadroWeb\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Projects\\var\\Pamadro\\PamadroWeb\\wwwroot\\images\\Tomato.ico",
+      "PackagePath": "staticwebassets\\images\\Tomato.ico"
     },
     {
       "Id": "C:\\Projects\\var\\Pamadro\\PamadroWeb\\wwwroot\\images\\pamadro.png",
