@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
-  Globals;
+  Globals, System.Win.TaskbarCore, Vcl.Taskbar;
 
 type
   TfrmMain = class(TForm)
@@ -19,6 +19,7 @@ type
     chkPlaySound: TCheckBox;
     chkShowDialog: TCheckBox;
     pnlTotal: TPanel;
+    tbarMain: TTaskbar;
     procedure btnStartStopClick(Sender: TObject);
     procedure timerTaskTimer(Sender: TObject);
     procedure timerCounterTimer(Sender: TObject);
@@ -143,6 +144,9 @@ begin
   _TimeCounterSec := WorkTimeMin * SecsPerMin;
   timerCounter.Interval := MSecsPerSec;
   timerCounter.Enabled := True;
+  tbarMain.ProgressState := TTaskBarProgressState.Normal;
+  tbarMain.ProgressMaxValue := _TimeCounterSec;
+  tbarMain.ProgressValue := 0;
 end;
 
 procedure TfrmMain.StopWorkOrRest;
@@ -151,6 +155,7 @@ begin
   timerCounter.Enabled := False;
   Caption := _FORM_TITLE_DEFAULT;
   _TimeCounterSec := 0;
+  tbarMain.ProgressState := TTaskBarProgressState.None;
 end;
 
 procedure TfrmMain.StartRest;
@@ -167,6 +172,9 @@ begin
   timerCounter.Enabled := True;
   Inc(_TotalWorkTimeCount);
   pnlTotal.Caption := Format(_TOTAL_WORKTIME_COUNT_FORMATTER, [_TotalWorkTimeCount]);
+  tbarMain.ProgressState := TTaskBarProgressState.Normal;
+  tbarMain.ProgressMaxValue := _TimeCounterSec;
+  tbarMain.ProgressValue := 0;
 end;
 
 procedure TfrmMain.PauseWorkOrRest;
@@ -217,6 +225,7 @@ begin
   if CurrentIntervalType = TIntervalTypeEnum.itWork then
     TypeLabel := _WORKING_LABEL;
   Caption := Format(_FORM_TITLE_W_OR_R_FORMATER, [Minuts, Seconds, TypeLabel]);
+  tbarMain.ProgressValue := tbarMain.ProgressValue + 1;
 end;
 
 end.

@@ -100,8 +100,6 @@ object frmMain: TfrmMain
     BevelKind = bkFlat
     BevelOuter = bvSpace
     TabOrder = 7
-    ExplicitTop = 343
-    ExplicitWidth = 180
   end
   object timerTask: TTimer
     Enabled = False
@@ -114,5 +112,12 @@ object frmMain: TfrmMain
     OnTimer = timerCounterTimer
     Left = 136
     Top = 72
+  end
+  object tbarMain: TTaskbar
+    TaskBarButtons = <>
+    ProgressState = Normal
+    TabProperties = []
+    Left = 72
+    Top = 208
   end
 end

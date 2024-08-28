@@ -1,0 +1,225 @@
+unit MainForm;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Globals, System.Win.TaskbarCore, Vcl.Taskbar;
+
+type
+  TfrmMain = class(TForm)
+    edtWorkTime: TLabeledEdit;
+    edtTaskName: TLabeledEdit;
+    edtRestTime: TLabeledEdit;
+    btnStartStop: TButton;
+    timerTask: TTimer;
+    timerCounter: TTimer;
+    btnPauseResume: TButton;
+    chkPlaySound: TCheckBox;
+    chkShowDialog: TCheckBox;
+    pnlTotal: TPanel;
+    tbarMain: TTaskbar;
+    procedure btnStartStopClick(Sender: TObject);
+    procedure timerTaskTimer(Sender: TObject);
+    procedure timerCounterTimer(Sender: TObject);
+    procedure btnPauseResumeClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private const
+    _DEFAULT_WORKING_TIME_MIN = 50;
+    _DEFAULT_REST_TIME_MIN = 10;
+    _COUNTER_INTERVAL_SEC = 1;
+    _FORM_TITLE_W_OR_R_FORMATER = '%2.2d:%2.2d [%s] Pamadro';
+    _FORM_TITLE_DEFAULT = 'Pamadro';
+    _FORM_TITLE_PAUSED_PREFIX = 'Paused ';
+    _WORKING_LABEL = 'w';
+    _REST_LABEL = 'b';
+    _START_LEBEL = 'Start';
+    _STOP_LABEL = 'Stop';
+    _PAUSE_LABEL = 'Pause';
+    _RESUME_LABEL = 'Resume';
+    _TOTAL_WORKTIME_COUNT_FORMATTER = 'Total Work Times: %d';
+    _SOUND_DELAY_MSEC = 1000;
+    procedure SetDefaultValues;
+    procedure ResumeWorkOrRest;
+    procedure PauseWorkOrRest;
+    procedure StopWorkOrRest;
+  private
+    _TimeCounterSec: Integer;
+    FCurrentIntervalType: TIntervalTypeEnum;
+    _TotalWorkTimeCount: Integer;
+
+    procedure StartWork;
+    procedure StartRest;
+    function GetCurrentIntervalType: TIntervalTypeEnum;
+    procedure SetCurrentIntervalType(const Value: TIntervalTypeEnum);
+  public
+    { Public declarations }
+    property CurrentIntervalType: TIntervalTypeEnum read GetCurrentIntervalType write SetCurrentIntervalType;
+  end;
+
+var
+  frmMain: TfrmMain;
+
+implementation
+uses MessageForm;
+
+{$R *.dfm}
+
+procedure TfrmMain.FormCreate(Sender: TObject);
+begin
+  SetDefaultValues;
+end;
+
+procedure TfrmMain.SetDefaultValues;
+begin
+  btnStartStop.Caption := _START_LEBEL;
+  btnPauseResume.Caption := _PAUSE_LABEL;
+  btnPauseResume.Enabled := False;
+  timerCounter.Interval := _COUNTER_INTERVAL_SEC * MSecsPerSec;
+  chkPlaySound.Checked := True;
+  chkShowDialog.Checked := True;
+  FCurrentIntervalType := TIntervalTypeEnum.itWork;
+  _TotalWorkTimeCount := 0;
+  pnlTotal.Caption := Format(_TOTAL_WORKTIME_COUNT_FORMATTER, [_TotalWorkTimeCount]);
+end;
+
+function TfrmMain.GetCurrentIntervalType: TIntervalTypeEnum;
+begin
+  Result := FCurrentIntervalType;
+end;
+
+procedure TfrmMain.SetCurrentIntervalType(const Value: TIntervalTypeEnum);
+begin
+  // todo: think to move start/stop code here or even rename to TCurrentState (Work, Rest, Stopped, Paused ...)
+  FCurrentIntervalType := Value;
+end;
+
+procedure TfrmMain.btnStartStopClick(Sender: TObject);
+begin
+  if btnStartStop.Caption = _START_LEBEL then
+  begin
+    btnStartStop.Caption := _STOP_LABEL;
+    btnPauseResume.Enabled := True;
+    edtWorkTime.Enabled := False;
+    edtRestTime.Enabled := False;
+    chkPlaySound.Enabled := False;
+    chkShowDialog.Enabled := False;
+    StartWork;
+  end
+  else
+  begin
+    btnStartStop.Caption := _START_LEBEL;
+    btnPauseResume.Enabled := False;
+    edtWorkTime.Enabled := True;
+    edtRestTime.Enabled := True;
+    chkPlaySound.Enabled := True;
+    chkShowDialog.Enabled := True;
+    StopWorkOrRest;
+  end;
+end;
+
+procedure TfrmMain.btnPauseResumeClick(Sender: TObject);
+begin
+  if btnPauseResume.Caption = _PAUSE_LABEL then
+  begin
+    btnPauseResume.Caption := _RESUME_LABEL;
+    PauseWorkOrRest;
+  end
+  else
+  begin
+    btnPauseResume.Caption := _PAUSE_LABEL;
+    ResumeWorkOrRest;
+  end;
+end;
+
+procedure TfrmMain.StartWork;
+var
+  WorkTimeMin: Integer;
+begin
+  WorkTimeMin := StrToIntDef(Trim(edtWorkTime.Text), _DEFAULT_WORKING_TIME_MIN);
+  timerTask.Interval := WorkTimeMin * SecsPerMin * MSecsPerSec;
+  CurrentIntervalType := TIntervalTypeEnum.itWork;
+  timerTask.Enabled := True;
+  _TimeCounterSec := WorkTimeMin * SecsPerMin;
+  timerCounter.Interval := MSecsPerSec;
+  timerCounter.Enabled := True;
+  tbarMain.ProgressMaxValue := _TimerCounterSec;
+end;
+
+procedure TfrmMain.StopWorkOrRest;
+begin
+  timerTask.Enabled := False;
+  timerCounter.Enabled := False;
+  Caption := _FORM_TITLE_DEFAULT;
+  _TimeCounterSec := 0;
+  tbarMain.ProgressState := TTaskBarProgressState.None;
+end;
+
+procedure TfrmMain.StartRest;
+var
+  RestTimeMin: Integer;
+begin
+  timerTask.Enabled := False;
+  RestTimeMin := StrToIntDef(Trim(edtRestTime.Text), _DEFAULT_REST_TIME_MIN);
+  timerTask.Interval := RestTimeMin * SecsPerMin * MSecsPerSec;
+  timerCounter.Enabled := False;
+  CurrentIntervalType := TIntervalTypeEnum.itRest;
+  timerTask.Enabled := True;
+  _TimeCounterSec := RestTimeMin * SecsPerMin;
+  timerCounter.Enabled := True;
+  Inc(_TotalWorkTimeCount);
+  pnlTotal.Caption := Format(_TOTAL_WORKTIME_COUNT_FORMATTER, [_TotalWorkTimeCount]);
+end;
+
+procedure TfrmMain.PauseWorkOrRest;
+begin
+  timerTask.Enabled := False;
+  timerCounter.Enabled := False;
+  Caption := _FORM_TITLE_PAUSED_PREFIX + Caption;
+end;
+
+procedure TfrmMain.ResumeWorkOrRest;
+begin
+  timerTask.Interval := _TimeCounterSec * MSecsPerSec;
+  timerTask.Enabled := True;
+  timerCounter.Enabled := True;
+end;
+
+procedure TfrmMain.timerTaskTimer(Sender: TObject);
+begin
+  if chkShowDialog.Checked then
+    ShowPamadroMessage(CurrentIntervalType, edtTaskName.Text);
+  if CurrentIntervalType = TIntervalTypeEnum.itWork then
+  begin
+    if chkPlaySound.Checked then
+      Beep;
+    StartRest;
+  end
+  else
+  begin
+    if chkPlaySound.Checked then
+    begin
+      Beep;
+      Sleep(_SOUND_DELAY_MSEC);
+      Beep;
+    end;
+    StartWork;
+  end;
+end;
+
+procedure TfrmMain.timerCounterTimer(Sender: TObject);
+var
+  Minuts, Seconds: Integer;
+  TypeLabel: string;
+begin
+  Dec(_TimeCounterSec);
+  Minuts := _TimeCounterSec div SecsPerMin;
+  Seconds := _TimeCounterSec mod SecsPerMin;
+  TypeLabel := _REST_LABEL;
+  if CurrentIntervalType = TIntervalTypeEnum.itWork then
+    TypeLabel := _WORKING_LABEL;
+  Caption := Format(_FORM_TITLE_W_OR_R_FORMATER, [Minuts, Seconds, TypeLabel]);
+end;
+
+end.

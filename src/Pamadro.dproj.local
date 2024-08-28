@@ -7,13 +7,13 @@
     <Transaction>2023-11-04 01:35:33.000.761,=C:\Users\max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2023-11-11 04:39:31.000.786,=C:\Users\max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2024-02-22 15:42:10.000.420,=C:\Users\max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024-02-22 15:43:17.000.387,C:\Projects\var\Pamadro\src\MainForm.pas=C:\Users\max\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024-02-22 15:43:17.000.387,C:\Projects\var\Pamadro\src\MainForm.dfm=C:\Users\max\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2024-02-22 15:43:25.000.046,C:\Projects\var\Pamadro\src\Pamadro.dproj=C:\Users\max\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2024-02-22 15:43:17.000.387,C:\Users\max\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Projects\var\Pamadro\src\MainForm.pas</Transaction>
+    <Transaction>2024-02-22 15:43:17.000.387,C:\Users\max\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Projects\var\Pamadro\src\MainForm.dfm</Transaction>
+    <Transaction>2024-02-22 15:43:25.000.046,C:\Users\max\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Projects\var\Pamadro\src\Pamadro.dproj</Transaction>
     <Transaction>2024-04-03 12:56:20.000.140,=C:\Projects\var\Pamadro\src\Unit1.pas</Transaction>
-    <Transaction>2024-04-03 13:02:59.000.627,C:\Projects\var\Pamadro\src\Unit1.pas=C:\Projects\var\Pamadro\src\MessageForm.pas</Transaction>
-    <Transaction>2024-04-03 13:02:59.000.627,C:\Projects\var\Pamadro\src\Unit1.dfm=C:\Projects\var\Pamadro\src\MessageForm.dfm</Transaction>
+    <Transaction>2024-04-03 13:02:59.000.627,C:\Projects\var\Pamadro\src\MessageForm.pas=C:\Projects\var\Pamadro\src\Unit1.pas</Transaction>
+    <Transaction>2024-04-03 13:02:59.000.627,C:\Projects\var\Pamadro\src\MessageForm.dfm=C:\Projects\var\Pamadro\src\Unit1.dfm</Transaction>
     <Transaction>2024-04-03 14:21:35.000.597,=C:\Projects\var\Pamadro\src\Unit1.pas</Transaction>
-    <Transaction>2024-04-03 14:21:54.000.830,C:\Projects\var\Pamadro\src\Unit1.pas=C:\Projects\var\Pamadro\src\Globals.pas</Transaction>
+    <Transaction>2024-04-03 14:21:54.000.830,C:\Projects\var\Pamadro\src\Globals.pas=C:\Projects\var\Pamadro\src\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
